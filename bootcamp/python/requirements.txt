@@ -1,0 +1,22 @@
+# Core DSP Libraries
+numpy>=1.21.0
+scipy>=1.7.0
+matplotlib>=3.4.0
+
+# Additional useful packages
+pandas>=1.3.0
+jupyter>=1.0.0
+ipykernel>=6.0.0
+
+# Audio processing (for later weeks)
+librosa>=0.8.0
+soundfile>=0.10.0
+
+# Image processing (for later weeks)
+Pillow>=8.3.0
+scikit-image>=0.18.0
+
+# Development tools
+pytest>=6.0.0
+black>=21.0.0
+flake8>=3.9.0

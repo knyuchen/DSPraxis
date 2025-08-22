@@ -1,120 +1,84 @@
 #!/usr/bin/env python3
 """
-Day 1 Practice - NumPy Basics
-Date: [Today's Date]
-Goals: Learn basic NumPy operations, array creation, and simple DSP concepts
+Day 1 Practice - Python Basics
+Date: 2025-08-21
+Goals: Basic String Manipulation
 """
 
-import numpy as np
-import matplotlib.pyplot as plt
 import argparse
 
 
 def exercise_1():
-    """Exercise 1: Basic NumPy Array Operations"""
-    print("=== Exercise 1: Basic NumPy Array Operations ===")
+    """Exercise 1: Basic String Assignment and Printing"""
+    print("=== Exercise 1: Basic String Assignment and Printing ===")
+    message = "Hi Python!"
+    print(message)
     
-    # Create arrays
-    arr1 = np.array([1, 2, 3, 4, 5])
-    arr2 = np.linspace(0, 10, 11)
-    arr3 = np.zeros(10)
-    arr4 = np.ones(5)
-    
-    print(f"Array 1: {arr1}")
-    print(f"Array 2 (0 to 10, 11 points): {arr2}")
-    print(f"Array 3 (zeros): {arr3}")
-    print(f"Array 4 (ones): {arr4}")
-    
-    # Basic operations
-    print(f"\nArray 1 + 2: {arr1 + 2}")
-    print(f"Array 1 * 3: {arr1 * 3}")
-    print(f"Sum of Array 1: {np.sum(arr1)}")
-    print(f"Mean of Array 1: {np.mean(arr1)}")
-
 
 def exercise_2():
-    """Exercise 2: Creating Simple Signals"""
-    print("\n=== Exercise 2: Creating Simple Signals ===")
-    
-    # Create time array
-    t = np.linspace(0, 1, 1000)
-    
-    # Create different signals
-    sine_wave = np.sin(2 * np.pi * 5 * t)  # 5 Hz sine wave
-    cosine_wave = np.cos(2 * np.pi * 3 * t)  # 3 Hz cosine wave
-    square_wave = np.sign(np.sin(2 * np.pi * 2 * t))  # 2 Hz square wave
-    
-    print(f"Time array shape: {t.shape}")
-    print(f"Sine wave shape: {sine_wave.shape}")
-    print(f"First 5 values of sine wave: {sine_wave[:5]}")
-    
-    # Plot the signals
-    plt.figure(figsize=(12, 8))
-    
-    plt.subplot(3, 1, 1)
-    plt.plot(t, sine_wave)
-    plt.title('5 Hz Sine Wave')
-    plt.ylabel('Amplitude')
-    
-    plt.subplot(3, 1, 2)
-    plt.plot(t, cosine_wave)
-    plt.title('3 Hz Cosine Wave')
-    plt.ylabel('Amplitude')
-    
-    plt.subplot(3, 1, 3)
-    plt.plot(t, square_wave)
-    plt.title('2 Hz Square Wave')
-    plt.xlabel('Time (s)')
-    plt.ylabel('Amplitude')
-    
-    plt.tight_layout()
-    plt.savefig('output/day1_signals.png', dpi=150, bbox_inches='tight')
-    plt.show()
-    
-    print("Signals plotted and saved to output/day1_signals.png")
+    """Exercise 2: Variable Reassignment"""
+    print("=== Exercise 2: Variable Reassignment ===")
+    message = "Hello"
+    print(message)
+    message = "Hi"
+    print(message)
 
 
 def exercise_3():
-    """Exercise 3: Basic DSP Operations"""
-    print("\n=== Exercise 3: Basic DSP Operations ===")
-    
-    # Create a signal with noise
-    t = np.linspace(0, 1, 1000)
-    signal_clean = np.sin(2 * np.pi * 10 * t)
-    noise = 0.1 * np.random.randn(1000)
-    signal_noisy = signal_clean + noise
-    
-    # Calculate signal statistics
-    print(f"Clean signal mean: {np.mean(signal_clean):.4f}")
-    print(f"Noisy signal mean: {np.mean(signal_noisy):.4f}")
-    print(f"Clean signal std: {np.std(signal_clean):.4f}")
-    print(f"Noisy signal std: {np.std(signal_noisy):.4f}")
-    
-    # Simple filtering (moving average)
-    window_size = 20
-    filtered_signal = np.convolve(signal_noisy, np.ones(window_size)/window_size, mode='same')
-    
-    # Plot comparison
-    plt.figure(figsize=(12, 6))
-    plt.plot(t, signal_clean, label='Clean Signal', alpha=0.7)
-    plt.plot(t, signal_noisy, label='Noisy Signal', alpha=0.5)
-    plt.plot(t, filtered_signal, label='Filtered Signal', linewidth=2)
-    plt.title('Signal Filtering Example')
-    plt.xlabel('Time (s)')
-    plt.ylabel('Amplitude')
-    plt.legend()
-    plt.grid(True, alpha=0.3)
-    plt.savefig('output/day1_filtering.png', dpi=150, bbox_inches='tight')
-    plt.show()
-    
-    print("Filtering example plotted and saved to output/day1_filtering.png")
+    """Exercise 3: F-String Formatting"""
+    print("=== Exercise 3: F-String Formatting ===")
+    name = "John"
+    print(f"Hello, {name}, what a nice day!")
+
+def exercise_4():
+    """Exercise 4: String Case Methods"""
+    print("=== Exercise 4: String Case Methods ===")
+    name = "rCay dwEll"
+    print(name)
+    print(name.title())
+    print(name.upper())
+    print(name.lower())
+
+def exercise_5():
+    """Exercise 5: String with Quotes"""
+    print("=== Exercise 5: String with Quotes ===")
+    print("Obi Wan once said, 'I have the high ground!'")
+
+def exercise_6():
+    """Exercise 6: F-String with Variables"""
+    print("=== Exercise 6: F-String with Variables ===")
+    famous_person = "Obi Wan"
+    famous_quote = "'I have the high ground!'"
+    message = f"{famous_person} once said, {famous_quote}"
+    print(message)
+
+def exercise_7():
+    """Exercise 7: String Stripping Methods"""
+    print("=== Exercise 7: String Stripping Methods ===")
+    name = "\tJohn\n"
+    name2 = "\t\tJohn\t"
+    print(name)
+    print(name.lstrip())
+    print(name.rstrip())
+    print(name.strip())
+    print(name2)
+    print(name2.lstrip())
+    print(name2.rstrip())
+    print(name2.strip())
+
+def exercise_8():
+    """Exercise 8: String Prefix/Suffix Removal"""
+    print("=== Exercise 8: String Prefix/Suffix Removal ===")
+    name = "ac.pt.txt"
+    print(name.removesuffix(".txt"))
+    print(name.removeprefix("ac."))
 
 
 def main():
     """Main function to run all exercises"""
-    parser = argparse.ArgumentParser(description='Day 1 DSP Practice - NumPy Basics')
-    parser.add_argument('--exercise', type=int, choices=[1, 2, 3], 
-                       help='Run specific exercise (1, 2, or 3)')
+    parser = argparse.ArgumentParser(description='Day X DSP Practice')
+    parser.add_argument('--exercise', type=int, choices=[1, 2, 3, 4, 5, 6, 7, 8], 
+                       help='Run specific exercise (1, 2, 3, 4, 5, 6, 7, or 8)')
     parser.add_argument('--all', action='store_true', 
                        help='Run all exercises')
     
@@ -127,15 +91,35 @@ def main():
             exercise_2()
         elif args.exercise == 3:
             exercise_3()
+        elif args.exercise == 4:
+            exercise_4()
+        elif args.exercise == 5:
+            exercise_5()
+        elif args.exercise == 6:
+            exercise_6()
+        elif args.exercise == 7:
+            exercise_7()
+        elif args.exercise == 8:
+            exercise_8()
     elif args.all:
         exercise_1()
         exercise_2()
         exercise_3()
+        exercise_4()
+        exercise_5()
+        exercise_6()
+        exercise_7()
+        exercise_8()
     else:
         # Default: run all exercises
         exercise_1()
         exercise_2()
         exercise_3()
+        exercise_4()
+        exercise_5()
+        exercise_6()
+        exercise_7()
+        exercise_8()
 
 
 if __name__ == "__main__":

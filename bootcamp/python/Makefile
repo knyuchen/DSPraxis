@@ -67,7 +67,7 @@ run-day:
 	fi
 	@echo "Running Week $(WEEK) Day $(DAY)..."
 	@if [ -f "week$(WEEK)/day$(DAY)/main.py" ]; then \
-		cd week$(WEEK)/day$(DAY) && ../venv/bin/python main.py; \
+		cd week$(WEEK)/day$(DAY) && ../../venv/bin/python main.py; \
 	else \
 		echo "Day $(WEEK)/$(DAY) not found. Create it first with:"; \
 		echo "  python3 setup_day.py $(WEEK) $(DAY)"; \

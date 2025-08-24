@@ -12,7 +12,7 @@ help:
 	@echo "  setup      - Set up all bootcamp environments"
 	@echo "  clean      - Clean all build artifacts and cache files"
 	@echo "  run-day    - Run a specific day in all languages"
-	@echo "  run-week   - Run all days in a week for all languages"
+	@echo "  run-all-days - Run all days for all languages"
 	@echo "  run-all    - Run all existing days in all languages"
 	@echo "  status     - Show status of all bootcamp sections"
 	@echo "  help       - Show this help message"
@@ -20,17 +20,17 @@ help:
 	@echo "Language-specific targets:"
 	@echo "  python-setup    - Set up Python environment"
 	@echo "  python-clean    - Clean Python cache"
-	@echo "  python-run-day  - Run Python day (WEEK=1 DAY=2)"
+	@echo "  python-run-day  - Run Python day (DAY=2)"
 	@echo "  c-clean         - Clean C build artifacts"
-	@echo "  c-run-day       - Run C day (WEEK=1 DAY=2)"
+	@echo "  c-run-day       - Run C day (DAY=2)"
 	@echo "  octave-clean    - Clean Octave workspace"
-	@echo "  octave-run-day  - Run Octave day (WEEK=1 DAY=2)"
+	@echo "  octave-run-day  - Run Octave day (DAY=2)"
 	@echo ""
 	@echo "Examples:"
 	@echo "  make setup"
-	@echo "  make run-day WEEK=1 DAY=1"
-	@echo "  make run-week WEEK=2"
-	@echo "  make python-run-day WEEK=1 DAY=2"
+	@echo "  make run-day DAY=1"
+	@echo "  make run-all-days"
+	@echo "  make python-run-day DAY=2"
 
 # Set up all bootcamp environments
 setup:
@@ -51,43 +51,38 @@ clean:
 
 # Run a specific day in all languages
 run-day:
-	@if [ -z "$(WEEK)" ] || [ -z "$(DAY)" ]; then \
-		echo "Usage: make run-day WEEK=<week_number> DAY=<day_number>"; \
-		echo "Example: make run-day WEEK=1 DAY=2"; \
+	@if [ -z "$(DAY)" ]; then \
+		echo "Usage: make run-day DAY=<day_number>"; \
+		echo "Example: make run-day DAY=2"; \
 		exit 1; \
 	fi
-	@echo "Running Week $(WEEK) Day $(DAY) in all languages..."
+	@echo "Running Day $(DAY) in all languages..."
 	@echo "=== Python ==="
-	@cd python && make run-day WEEK=$(WEEK) DAY=$(DAY) || echo "Python day not found or failed"
+	@cd python && make run-day DAY=$(DAY) || echo "Python day not found or failed"
 	@echo "=== C ==="
-	@cd c && make run-day WEEK=$(WEEK) DAY=$(DAY) || echo "C day not found or failed"
+	@cd c && make run-day DAY=$(DAY) || echo "C day not found or failed"
 	@echo "=== Octave ==="
-	@cd octave && make run-day WEEK=$(WEEK) DAY=$(DAY) || echo "Octave day not found or failed"
+	@cd octave && make run-day DAY=$(DAY) || echo "Octave day not found or failed"
 
-# Run all days in a week for all languages
-run-week:
-	@if [ -z "$(WEEK)" ]; then \
-		echo "Usage: make run-week WEEK=<week_number>"; \
-		echo "Example: make run-week WEEK=1"; \
-		exit 1; \
-	fi
-	@echo "Running Week $(WEEK) in all languages..."
+# Run all days for all languages
+run-all-days:
+	@echo "Running all days in all languages..."
 	@echo "=== Python ==="
-	@cd python && make run-week WEEK=$(WEEK) || echo "Python week not found or failed"
+	@cd python && make run-all-days || echo "Python run-all-days failed"
 	@echo "=== C ==="
-	@cd c && make run-week WEEK=$(WEEK) || echo "C week not found or failed"
+	@cd c && make run-all-days || echo "C run-all-days failed"
 	@echo "=== Octave ==="
-	@cd octave && make run-week WEEK=$(WEEK) || echo "Octave week not found or failed"
+	@cd octave && make run-all-days || echo "Octave run-all-days failed"
 
 # Run all existing days in all languages
 run-all:
 	@echo "Running all existing days in all languages..."
 	@echo "=== Python ==="
-	@cd python && make run-all || echo "Python run-all failed"
+	@cd python && make run-all-days || echo "Python run-all-days failed"
 	@echo "=== C ==="
-	@cd c && make build-all || echo "C build-all failed"
+	@cd c && make run-all-days || echo "C run-all-days failed"
 	@echo "=== Octave ==="
-	@cd octave && make run-all || echo "Octave run-all failed"
+	@cd octave && make run-all-days || echo "Octave run-all-days failed"
 
 # Show status of all bootcamp sections
 status:
@@ -95,7 +90,7 @@ status:
 	@echo "========================="
 	@echo ""
 	@echo "Python Bootcamp:"
-	@cd python && find . -name "main.py" | wc -l | xargs echo "  Days created:"
+	@cd python && find days -name "main.py" | wc -l | xargs echo "  Days created:"
 	@echo "  Virtual environment: $(shell if [ -d "python/venv" ]; then echo "✓ Created"; else echo "✗ Not created"; fi)"
 	@echo ""
 	@echo "C Bootcamp:"
@@ -112,28 +107,28 @@ python-clean:
 	@cd python && make clean
 
 python-run-day:
-	@if [ -z "$(WEEK)" ] || [ -z "$(DAY)" ]; then \
-		echo "Usage: make python-run-day WEEK=<week_number> DAY=<day_number>"; \
+	@if [ -z "$(DAY)" ]; then \
+		echo "Usage: make python-run-day DAY=<day_number>"; \
 		exit 1; \
 	fi
-	@cd python && make run-day WEEK=$(WEEK) DAY=$(DAY)
+	@cd python && make run-day DAY=$(DAY)
 
 c-clean:
 	@cd c && make clean
 
 c-run-day:
-	@if [ -z "$(WEEK)" ] || [ -z "$(DAY)" ]; then \
-		echo "Usage: make c-run-day WEEK=<week_number> DAY=<day_number>"; \
+	@if [ -z "$(DAY)" ]; then \
+		echo "Usage: make c-run-day DAY=<day_number>"; \
 		exit 1; \
 	fi
-	@cd c && make run-day WEEK=$(WEEK) DAY=$(DAY)
+	@cd c && make run-day DAY=$(DAY)
 
 octave-clean:
 	@cd octave && make clean
 
 octave-run-day:
-	@if [ -z "$(WEEK)" ] || [ -z "$(DAY)" ]; then \
-		echo "Usage: make octave-run-day WEEK=<week_number> DAY=<day_number>"; \
+	@if [ -z "$(DAY)" ]; then \
+		echo "Usage: make octave-run-day DAY=<day_number>"; \
 		exit 1; \
 	fi
-	@cd octave && make run-day WEEK=$(WEEK) DAY=$(DAY)
+	@cd octave && make run-day DAY=$(DAY)

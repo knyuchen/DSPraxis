@@ -24,9 +24,9 @@ def setup_day(week_num, day_num, topic=None):
     
     # Create paths
     template_path = "template_day"
-    week_folder = f"week{week_num}"
+    days_folder = "days"
     day_folder = f"day{day_num}"
-    target_path = os.path.join(week_folder, day_folder)
+    target_path = os.path.join(days_folder, day_folder)
     
     # Check if target already exists
     if os.path.exists(target_path):
@@ -36,10 +36,10 @@ def setup_day(week_num, day_num, topic=None):
             print("Setup cancelled.")
             return False
     
-    # Create week folder if it doesn't exist
-    if not os.path.exists(week_folder):
-        os.makedirs(week_folder)
-        print(f"Created week folder: {week_folder}")
+    # Create days folder if it doesn't exist
+    if not os.path.exists(days_folder):
+        os.makedirs(days_folder)
+        print(f"Created days folder: {days_folder}")
     
     # Copy template to target
     try:

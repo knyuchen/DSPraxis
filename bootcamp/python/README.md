@@ -69,7 +69,7 @@ python main.py --all
 - [x] Day 1 Complete (String Basics)
 - [x] Day 2 Complete (Numbers and Lists)
 - [x] Day 3 Complete (Loops and Comprehensions)
-- [ ] Day 4 (NumPy Basics)
+- [x] Day 4 Complete (Conditionals and Dictionaries)
 - [ ] Day 5 (NumPy Arrays)
 - [ ] Day 6 (NumPy Operations)
 - [ ] Day 7 (NumPy Advanced)

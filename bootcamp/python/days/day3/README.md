@@ -1,7 +1,6 @@
 # Day 3 - Loops, List Comprehensions, and Tuples
 
 **Date:** 2025-08-23  
-**Week:** 1  
 **Focus:** Introduction to loops, list comprehensions, range operations, and tuples
 
 ## 🎯 Today's Goals

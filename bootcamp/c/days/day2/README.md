@@ -1,7 +1,6 @@
 # Day 2 - Signal Processing
 
 **Date:** 2025-08-24  
-**Week:** 1  
 **Focus:** Signal Processing
 
 ## 🎯 Today's Goals

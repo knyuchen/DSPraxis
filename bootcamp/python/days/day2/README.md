@@ -1,7 +1,6 @@
 # Day 2 - Numbers and Lists
 
 **Date:** 2025-08-22  
-**Week:** 1  
 **Focus:** Introduction to numbers, arithmetic operations, and list manipulation
 
 ## 🎯 Today's Goals

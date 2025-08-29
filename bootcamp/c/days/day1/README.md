@@ -1,7 +1,6 @@
 # Day 1 - C Basics
 
 **Date:** 2025-08-20  
-**Week:** 1  
 **Focus:** C Basics
 
 ## 🎯 Today's Goals

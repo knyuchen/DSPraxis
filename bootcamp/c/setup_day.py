@@ -10,16 +10,12 @@ import shutil
 from datetime import datetime
 
 
-def setup_day(week_num, day_num, topic=None):
+def setup_day(day_num, topic=None):
     """Create a new day folder by copying the template."""
     
     # Validate inputs
-    if not (1 <= week_num <= 6):
-        print("Error: Week number must be between 1 and 6")
-        return False
-    
-    if not (1 <= day_num <= 7):
-        print("Error: Day number must be between 1 and 7")
+    if not (1 <= day_num <= 100):  # Allow for many days
+        print("Error: Day number must be between 1 and 100")
         return False
     
     # Create paths
@@ -57,11 +53,11 @@ def setup_day(week_num, day_num, topic=None):
         
         # Update the header
         today = datetime.now().strftime("%Y-%m-%d")
-        topic_text = topic if topic else f"Week {week_num} Day {day_num} Practice"
+        topic_text = topic if topic else f"Day {day_num} Practice"
         
         content = content.replace("Day X Practice - [Topic]", f"Day {day_num} Practice - {topic_text}")
         content = content.replace("[Date]", today)
-        content = content.replace("[List of goals for this day]", f"Complete Week {week_num} Day {day_num} exercises")
+        content = content.replace("[List of goals for this day]", f"Complete Day {day_num} exercises")
         
         with open(main_c_path, 'w') as f:
             f.write(content)
@@ -78,7 +74,7 @@ def setup_day(week_num, day_num, topic=None):
             content = f.read()
         
         today = datetime.now().strftime("%Y-%m-%d")
-        topic_text = topic if topic else f"Week {week_num} Day {day_num} Practice"
+        topic_text = topic if topic else f"Day {day_num} Practice"
         
         content = content.replace("Day X DSP Practice", f"Day {day_num} DSP Practice")
         content = content.replace("[Date]", today)
@@ -98,11 +94,10 @@ def setup_day(week_num, day_num, topic=None):
             content = f.read()
         
         today = datetime.now().strftime("%Y-%m-%d")
-        topic_text = topic if topic else f"Week {week_num} Day {day_num} Practice"
+        topic_text = topic if topic else f"Day {day_num} Practice"
         
         content = content.replace("Day X - [Topic]", f"Day {day_num} - {topic_text}")
         content = content.replace("[Date]", today)
-        content = content.replace("[Week Number]", str(week_num))
         content = content.replace("[Main topic for this day]", topic_text)
         
         with open(readme_path, 'w') as f:
@@ -122,21 +117,20 @@ def setup_day(week_num, day_num, topic=None):
 
 def main():
     """Main function to handle command line arguments."""
-    if len(sys.argv) < 3:
-        print("Usage: python3 setup_day.py <week> <day> [topic]")
-        print("Example: python3 setup_day.py 1 2 'Array Operations'")
-        print("Example: python3 setup_day.py 2 1")
+    if len(sys.argv) < 2:
+        print("Usage: python3 setup_day.py <day> [topic]")
+        print("Example: python3 setup_day.py 5 'Array Operations'")
+        print("Example: python3 setup_day.py 6")
         return
     
     try:
-        week_num = int(sys.argv[1])
-        day_num = int(sys.argv[2])
-        topic = sys.argv[3] if len(sys.argv) > 3 else None
+        day_num = int(sys.argv[1])
+        topic = sys.argv[2] if len(sys.argv) > 2 else None
         
-        setup_day(week_num, day_num, topic)
+        setup_day(day_num, topic)
         
     except ValueError:
-        print("Error: Week and day must be numbers")
+        print("Error: Day must be a number")
     except Exception as e:
         print(f"Error: {e}")
 

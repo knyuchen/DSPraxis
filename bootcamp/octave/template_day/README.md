@@ -1,7 +1,6 @@
 # Day X - [Topic]
 
 **Date:** [Date]  
-**Week:** [Week Number]  
 **Focus:** [Main topic for this day]
 
 ## 🎯 Today's Goals

@@ -1,7 +1,6 @@
 # Day 4 - Conditionals and Dictionaries
 
 **Date:** 2025-08-24  
-**Week:** 1  
 **Focus:** Introduction to conditional statements, if-elif-else chains, and dictionary data structures
 
 ## 🎯 Today's Goals

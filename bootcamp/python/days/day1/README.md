@@ -1,7 +1,6 @@
 # Day 1 - Python String Basics
 
-**Date:** 2025-08-21  
-**Week:** 1  
+**Date:** 2025-08-24  
 **Focus:** Introduction to Python string manipulation and basic operations
 
 ## 🎯 Today's Goals

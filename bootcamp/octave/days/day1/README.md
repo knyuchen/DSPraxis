@@ -1,7 +1,6 @@
 # Day 1 - Octave Basics
 
 **Date:** 2025-08-20  
-**Week:** 1  
 **Focus:** Octave Basics
 
 ## 🎯 Today's Goals

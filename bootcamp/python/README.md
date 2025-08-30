@@ -72,7 +72,7 @@ python main.py --all
 - [x] Day 4 Complete (Conditionals and Dictionaries)
 - [x] Day 5 Complete (Advanced Dictionary Operations and User Input)
 - [x] Day 6 Complete (Functions and Advanced Function Concepts)
-- [ ] Day 7 (NumPy Advanced)
+- [x] Day 7 Complete (Object-Oriented Programming Fundamentals)
 - [ ] Day 8 (SciPy Basics)
 - [ ] Day 9 (Signal Processing)
 - [ ] Day 10 (SciPy Advanced)

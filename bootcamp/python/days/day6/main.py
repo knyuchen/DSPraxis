@@ -159,7 +159,7 @@ def main():
     """Main function to run all exercises"""
     parser = argparse.ArgumentParser(description='Day 6 DSP Practice')
     parser.add_argument('--exercise', type=int, choices=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 
-                       help='Run specific exercise (1-12)')
+                       help='Run specific exercise (1-12 )')
     parser.add_argument('--all', action='store_true', 
                        help='Run all exercises')
     

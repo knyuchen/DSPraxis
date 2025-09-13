@@ -12,14 +12,11 @@ bootcamp/python/
 │   ├── data/              # Sample data folder
 │   └── output/            # Output folder
 ├── setup_day.py           # Script to create new days
-├── week1/
-│   ├── day1/
-│   ├── day2/
-│   └── ...
-├── week2/
-│   ├── day1/
-│   ├── day2/
-│   └── ...
+├── days/                  # All practice days
+│   ├── day1/              # String basics
+│   ├── day2/              # Numbers and lists
+│   ├── day3/              # Loops and comprehensions
+│   └── ...                # Additional days
 └── ...
 ```
 
@@ -36,13 +33,13 @@ Each day folder contains:
 ### Setting up a new day:
 ```bash
 # Create a new day (basic)
-python setup_day.py 1 2
+python3 setup_day.py 1 4
 
 # Create a new day with topic
-python setup_day.py 1 2 "NumPy Arrays"
+python3 setup_day.py 1 4 "NumPy Arrays"
 
 # Navigate to the new day
-cd week1/day2
+cd days/day4
 
 # Run the day's practice
 python main.py
@@ -60,20 +57,26 @@ python main.py --exercise 1
 python main.py --all
 ```
 
-## 📚 Weekly Themes
+## 📚 Learning Progression
 
-- **Week 1**: Python Basics & NumPy Fundamentals
-- **Week 2**: SciPy & Signal Processing Basics
-- **Week 3**: Matplotlib & Visualization
-- **Week 4**: Advanced NumPy & Array Operations
-- **Week 5**: Real-world DSP Applications
-- **Week 6**: Integration & Project Work
+- **Days 1-3**: Python Basics (Strings, Numbers, Lists, Loops)
+- **Days 4-7**: NumPy Fundamentals & Array Operations
+- **Days 8-10**: SciPy & Signal Processing Basics
+- **Days 11-14**: Matplotlib & Advanced DSP Applications
 
 ## 📝 Progress Tracking
 
-- [ ] Week 1 Complete
-- [ ] Week 2 Complete
-- [ ] Week 3 Complete
-- [ ] Week 4 Complete
-- [ ] Week 5 Complete
-- [ ] Week 6 Complete
+- [x] Day 1 Complete (String Basics)
+- [x] Day 2 Complete (Numbers and Lists)
+- [x] Day 3 Complete (Loops and Comprehensions)
+- [x] Day 4 Complete (Conditionals and Dictionaries)
+- [x] Day 5 Complete (Advanced Dictionary Operations and User Input)
+- [x] Day 6 Complete (Functions and Advanced Function Concepts)
+- [x] Day 7 Complete (Object-Oriented Programming Fundamentals)
+- [ ] Day 8 (SciPy Basics)
+- [ ] Day 9 (Signal Processing)
+- [ ] Day 10 (SciPy Advanced)
+- [ ] Day 11 (Matplotlib Basics)
+- [ ] Day 12 (Plotting Signals)
+- [ ] Day 13 (Advanced Visualization)
+- [ ] Day 14 (DSP Integration)

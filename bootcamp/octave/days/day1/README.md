@@ -1,7 +1,7 @@
-# Day X - [Topic]
+# Day 1 - Octave Basics
 
-**Date:** [Date]  
-**Focus:** [Main topic for this day]
+**Date:** 2025-08-20  
+**Focus:** Octave Basics
 
 ## 🎯 Today's Goals
 

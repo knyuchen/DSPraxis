@@ -10,14 +10,14 @@ help:
 	@echo ""
 	@echo "Available targets:"
 	@echo "  clean      - Clean all build artifacts"
-	@echo "  run-day    - Build and run a specific day (usage: make run-day WEEK=1 DAY=2)"
-	@echo "  run-week   - Build and run all days in a week (usage: make run-week WEEK=1)"
+	@echo "  run-day    - Build and run a specific day (usage: make run-day DAY=2)"
+	@echo "  run-all-days - Build and run all days"
 	@echo "  build-all  - Build all existing days"
 	@echo "  help       - Show this help message"
 	@echo ""
 	@echo "Examples:"
-	@echo "  make run-day WEEK=1 DAY=1"
-	@echo "  make run-week WEEK=2"
+	@echo "  make run-day DAY=1"
+	@echo "  make run-all-days"
 	@echo "  make build-all"
 
 # Clean all build artifacts
@@ -31,31 +31,26 @@ clean:
 
 # Build and run a specific day
 run-day:
-	@if [ -z "$(WEEK)" ] || [ -z "$(DAY)" ]; then \
-		echo "Usage: make run-day WEEK=<week_number> DAY=<day_number>"; \
-		echo "Example: make run-day WEEK=1 DAY=2"; \
+	@if [ -z "$(DAY)" ]; then \
+		echo "Usage: make run-day DAY=<day_number>"; \
+		echo "Example: make run-day DAY=2"; \
 		exit 1; \
 	fi
-	@echo "Building and running Week $(WEEK) Day $(DAY)..."
-	@if [ -f "week$(WEEK)/day$(DAY)/main.c" ]; then \
-		cd week$(WEEK)/day$(DAY) && make clean && make && ./main; \
+	@echo "Building and running Day $(DAY)..."
+	@if [ -f "days/day$(DAY)/main.c" ]; then \
+		cd days/day$(DAY) && make clean && make && ./main; \
 	else \
-		echo "Day $(WEEK)/$(DAY) not found. Create it first with:"; \
-		echo "  python3 setup_day.py $(WEEK) $(DAY)"; \
+		echo "Day $(DAY) not found. Create it first with:"; \
+		echo "  python3 setup_day.py 1 $(DAY)"; \
 	fi
 
-# Build and run all days in a week
-run-week:
-	@if [ -z "$(WEEK)" ]; then \
-		echo "Usage: make run-week WEEK=<week_number>"; \
-		echo "Example: make run-week WEEK=1"; \
-		exit 1; \
-	fi
-	@echo "Building and running all days in Week $(WEEK)..."
-	@for day in 1 2 3 4 5 6 7; do \
-		if [ -f "week$(WEEK)/day$$day/main.c" ]; then \
+# Build and run all days
+run-all-days:
+	@echo "Building and running all days..."
+	@for day in 1 2 3 4 5 6 7 8 9 10 11 12 13 14; do \
+		if [ -f "days/day$$day/main.c" ]; then \
 			echo "Building and running Day $$day..."; \
-			cd week$(WEEK)/day$$day && make clean && make && ./main && cd ../..; \
+			cd days/day$$day && make clean && make && ./main && cd ../..; \
 		fi; \
 	done
 

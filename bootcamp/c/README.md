@@ -15,14 +15,10 @@ bootcamp/c/
 │   ├── src/               # Source files
 │   └── include/           # Header files
 ├── setup_day.py           # Script to create new days
-├── week1/
-│   ├── day1/
-│   ├── day2/
-│   └── ...
-├── week2/
-│   ├── day1/
-│   ├── day2/
-│   └── ...
+├── days/                  # All practice days
+│   ├── day1/              # Basic arrays and signals
+│   ├── day2/              # Signal processing basics
+│   └── ...                # Additional days
 └── ...
 ```
 
@@ -48,7 +44,7 @@ python3 setup_day.py 1 2
 python3 setup_day.py 1 2 "Array Operations"
 
 # Navigate to the new day
-cd week1/day2
+cd days/day2
 
 # Build and run
 make
@@ -70,20 +66,26 @@ make clean
 ./main --exercise 1
 ```
 
-## 📚 Weekly Themes
+## 📚 Learning Progression
 
-- **Week 1**: C Basics & Memory Management
-- **Week 2**: Arrays, Pointers & DSP Data Structures
-- **Week 3**: Functions & Modular Programming
-- **Week 4**: File I/O & Data Processing
-- **Week 5**: Real-time Processing & Optimization
-- **Week 6**: Advanced DSP Algorithms
+- **Days 1-3**: C Basics & Memory Management
+- **Days 4-7**: Arrays, Pointers & DSP Data Structures
+- **Days 8-10**: Functions & Modular Programming
+- **Days 11-14**: File I/O & Advanced DSP Algorithms
 
 ## 📝 Progress Tracking
 
-- [ ] Week 1 Complete
-- [ ] Week 2 Complete
-- [ ] Week 3 Complete
-- [ ] Week 4 Complete
-- [ ] Week 5 Complete
-- [ ] Week 6 Complete
+- [x] Day 1 Complete (Basic Arrays and Signals)
+- [ ] Day 2 (Signal Processing Basics)
+- [ ] Day 3 (C Basics)
+- [ ] Day 4 (Memory Management)
+- [ ] Day 5 (Pointers)
+- [ ] Day 6 (DSP Data Structures)
+- [ ] Day 7 (Advanced Arrays)
+- [ ] Day 8 (Functions)
+- [ ] Day 9 (Modular Programming)
+- [ ] Day 10 (Function Optimization)
+- [ ] Day 11 (File I/O)
+- [ ] Day 12 (Data Processing)
+- [ ] Day 13 (Real-time Processing)
+- [ ] Day 14 (Advanced DSP Algorithms)

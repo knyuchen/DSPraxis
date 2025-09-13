@@ -1,8 +1,7 @@
-# Day 1 - C Basics
+# Day 2 - Signal Processing
 
-**Date:** 2025-08-20  
-**Week:** 1  
-**Focus:** C Basics
+**Date:** 2025-08-24  
+**Focus:** Signal Processing
 
 ## 🎯 Today's Goals
 
@@ -27,35 +26,40 @@
 - **Key Concepts:** [Important concepts covered]
 - **Expected Output:** [What you should see/learn]
 
-## 🚀 How to Build and Run
+## 🚀 How to Run
 
 ```bash
-# Build the program
-make
-
 # Run all exercises
-./main
+octave main.m
 
 # Run specific exercise
-./main -e 1
+octave main.m --exercise 1
 
 # Run all exercises explicitly
-./main -a
+octave main.m --all
 
-# Clean build files
-make clean
+# Interactive mode
+octave
+octave> main
+octave> exercise_1
 ```
 
-## 🛠️ Makefile Targets
+## 🛠️ Octave Commands
 
-```bash
-make        # Build the program
-make run    # Build and run all exercises
-make run1   # Build and run exercise 1
-make run2   # Build and run exercise 2
-make run3   # Build and run exercise 3
-make clean  # Remove build files
-make help   # Show all available targets
+```octave
+% Load and run main script
+main
+
+% Run individual exercises
+exercise_1
+exercise_2
+exercise_3
+
+% Clear workspace
+clear all
+
+% Close all figures
+close all
 ```
 
 ## 📝 Notes
@@ -71,8 +75,8 @@ make help   # Show all available targets
 ## ✅ Completion Checklist
 
 - [ ] All exercises completed
-- [ ] Code compiles without warnings
-- [ ] Program runs without errors
-- [ ] Outputs generated and saved
+- [ ] Scripts run without errors
+- [ ] Plots generated and saved
+- [ ] Outputs verified
 - [ ] Notes documented
 - [ ] Concepts understood

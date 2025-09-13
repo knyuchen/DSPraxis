@@ -1,7 +1,7 @@
-# Day X - [Topic]
+# Day 1 - C Basics
 
-**Date:** [Date]  
-**Focus:** [Main topic for this day]
+**Date:** 2025-08-20  
+**Focus:** C Basics
 
 ## 🎯 Today's Goals
 
@@ -26,40 +26,35 @@
 - **Key Concepts:** [Important concepts covered]
 - **Expected Output:** [What you should see/learn]
 
-## 🚀 How to Run
+## 🚀 How to Build and Run
 
 ```bash
+# Build the program
+make
+
 # Run all exercises
-octave main.m
+./main
 
 # Run specific exercise
-octave main.m --exercise 1
+./main -e 1
 
 # Run all exercises explicitly
-octave main.m --all
+./main -a
 
-# Interactive mode
-octave
-octave> main
-octave> exercise_1
+# Clean build files
+make clean
 ```
 
-## 🛠️ Octave Commands
+## 🛠️ Makefile Targets
 
-```octave
-% Load and run main script
-main
-
-% Run individual exercises
-exercise_1
-exercise_2
-exercise_3
-
-% Clear workspace
-clear all
-
-% Close all figures
-close all
+```bash
+make        # Build the program
+make run    # Build and run all exercises
+make run1   # Build and run exercise 1
+make run2   # Build and run exercise 2
+make run3   # Build and run exercise 3
+make clean  # Remove build files
+make help   # Show all available targets
 ```
 
 ## 📝 Notes
@@ -75,8 +70,8 @@ close all
 ## ✅ Completion Checklist
 
 - [ ] All exercises completed
-- [ ] Scripts run without errors
-- [ ] Plots generated and saved
-- [ ] Outputs verified
+- [ ] Code compiles without warnings
+- [ ] Program runs without errors
+- [ ] Outputs generated and saved
 - [ ] Notes documented
 - [ ] Concepts understood

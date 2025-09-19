@@ -4,7 +4,7 @@
 # Project Configuration - Edit these for each new project
 PROJECT_NAME = increment_display
 TOP_MODULE = increment_display
-SOURCE_FILES = increment_display.v debounce.v display_decode.v
+SOURCE_FILES = increment_display.v increment_display_unit.v debounce.v display_decode.v
 CONSTRAINT_FILE = ../Go_Board_Constraints.pcf
 
 # Device Configuration (for Go Board)

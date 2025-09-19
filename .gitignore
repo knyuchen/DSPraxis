@@ -120,32 +120,9 @@ octave-core
 *.jbc
 *.svf
 *.xsvf
-*.bit
-*.bin
-*.mcs
-*.prm
-*.xpr
-*.xsa
-*.hdf
-*.hwh
-*.hwp
-*.hwdef
-*.tcl
-*.xci
-*.xdc
-*.sdc
-*.qpf
-*.qsf
-*.qsys
-*.sopcinfo
-*.sof
-*.pof
-*.rbf
-*.jic
-*.jam
-*.jbc
-*.svf
-*.xsvf
+
+# Icarus Verilog executables
+*.out
 
 # Yosys/IceStorm
 *.blif
